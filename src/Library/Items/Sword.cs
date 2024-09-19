@@ -1,6 +1,6 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Sword
+public class Sword : IItems
 {
     public int AttackValue 
     {
@@ -9,4 +9,13 @@ public class Sword
             return 20;
         } 
     }
+
+    public int DefenseValue
+    {
+        get
+        {
+            return 0;
+        }
+    }
 }
+

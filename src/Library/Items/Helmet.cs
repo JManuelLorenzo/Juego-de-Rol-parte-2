@@ -1,7 +1,14 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Helmet
+public class Helmet: IItems
 {
+    public int AttackValue
+    {
+        get
+        {
+            return 0;
+        }
+    }
     public int DefenseValue
     {
         get
