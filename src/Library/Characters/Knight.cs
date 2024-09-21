@@ -1,60 +1,60 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Knight
-{
-    private int health = 100;
-
-    public Knight(string name)
+    public class Knight : ICharacters
     {
-        this.Name = name;
-    }
+        
 
-    public string Name { get; set; }
-
-    public Sword Sword { get; set; }
-
-    public Shield Shield { get; set; }
-
-    public Armor Armor { get; set; }
-
-    public int AttackValue
-    {
-        get
+        public Knight(string name)
         {
-            return Sword.AttackValue;
+            this.Name = name;
+        }
+        private int health = 100;
+        public string Name { get; set; }
+
+        public Sword Sword { get; set; }
+
+        public Shield Shield { get; set; }
+
+        public Armor Armor { get; set; }
+
+        public int Health
+        {
+            get { return health; }
+        }
+
+        public int AttackValue
+        {
+            get
+            {
+                return Sword.AttackValue;
+            }
+        }
+
+        public int DefenseValue
+        {
+            get
+            {
+                return Armor.DefenseValue + Shield.DefenseValue;
+            }
+        }
+
+        
+        public void ReceiveAttack(int power)
+        {
+            if (this.DefenseValue < power)
+            {
+               SetHealth( this.health - (power - this.DefenseValue));
+            }
+        }
+
+        public void Cure()
+        {
+            SetHealth(100);
+        }
+        
+
+        public void SetHealth(int value)
+        {
+           this.health = value < 0 ? 0 : value; // Controla el límite inferior
         }
     }
-
-    public int DefenseValue
-    {
-        get
-        {
-            return Armor.DefenseValue + Shield.DefenseValue;
-        }
-    }
-
-    public int Health
-    {
-        get
-        {
-            return this.health;
-        }
-        private set
-        {
-            this.health = value < 0 ? 0 : value;
-        }
-    }
-
-    public void ReceiveAttack(int power)
-    {
-        if (this.DefenseValue < power)
-        {
-            this.Health -= power - this.DefenseValue;
-        }
-    }
-
-    public void Cure()
-    {
-        this.Health = 100;
-    }
-}
