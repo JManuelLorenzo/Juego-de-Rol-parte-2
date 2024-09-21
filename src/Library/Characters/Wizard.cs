@@ -3,14 +3,14 @@ namespace Ucu.Poo.RoleplayGame;
 public class Wizard
 {
     private int health = 100;
-
-    public Wizard(string name)
+    public Wizard(string name, int mana)
     {
         this.Name = name;
+        this.Mana = mana;
     }
 
     public string Name { get; set; }
-
+    private int Mana { get; set; }
     public SpellsBook SpellsBook { get; set; }
 
     public Staff Staff { get; set; }
@@ -19,7 +19,7 @@ public class Wizard
     {
         get
         {
-            return SpellsBook.AttackValue + Staff.AttackValue;
+            return SpellsBook.AttackValue + Staff.AttackValue + Mana;
         }
     }
 
@@ -27,7 +27,7 @@ public class Wizard
     {
         get
         {
-            return SpellsBook.DefenseValue + Staff.DefenseValue;
+            return SpellsBook.DefenseValue + Staff.DefenseValue + Mana;
         }
     }
 
@@ -54,5 +54,10 @@ public class Wizard
     public void Cure()
     {
         this.Health = 100;
+    }
+
+    public void Study()
+    {
+        this.Mana ++;
     }
 }
