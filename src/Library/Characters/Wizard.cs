@@ -55,7 +55,6 @@ public class Wizard : ICharacters
     {
         this.health = value < 0 ? 0 : value; // Controla el límite inferior
     }
-    
     public void Study()
     {
         this.mana++;
