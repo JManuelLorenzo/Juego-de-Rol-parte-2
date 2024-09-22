@@ -64,7 +64,7 @@ public class Wizard : ICharacters
     public string GetInfo() // Cambiado a PascalCase
     {
         string info = $"Nombre: {Name}, Vida: {health}, Mana: {mana}\n";
-        info += $"Items:\n";
+        info += $"Items Staff, Spellsbook:\n";
 
         foreach (IItems item in Objetos)
         {
