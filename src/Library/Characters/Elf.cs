@@ -8,13 +8,16 @@ public class Elf : ICharacters
     {
         this.Name = name;
         Bow = new Bow();
+        Helmet = new Helmet();
 
         Objetos.Add(Bow);
+        Objetos.Add(Helmet);
     }
 
     public string Name { get; set; }
 
     public Bow Bow { get; set; }
+    public Helmet Helmet { get; set; }
 
     public List<IItems> Objetos { get; set; } = new List<IItems>();
 
@@ -53,7 +56,7 @@ public class Elf : ICharacters
 
     public string GetInfo() // Cambiado a PascalCase
     {
-        string info = $"Nombre: {Name}, Vida: {health}\nItems: Bow\n";
+        string info = $"Nombre: {Name}, Vida: {health}\nItems: Bow y Helmet\n";
 
         foreach (IItems item in Objetos)
         {
