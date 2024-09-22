@@ -2,11 +2,20 @@ namespace Ucu.Poo.RoleplayGame;
 
 public class Staff : IItems
 {
+
+    private int _attackValue;
+    private int _defenseValue;
+
+    public Staff (int ataque, int defensa){
+        _attackValue = ataque;
+        _defenseValue = defensa;
+    }
+
     public int AttackValue 
     {
         get
         {
-            return 100;
+            return _attackValue;
         } 
     }
 
@@ -14,7 +23,7 @@ public class Staff : IItems
     {
         get
         {
-            return 100;
+            return _defenseValue;
         }
     }
 }

@@ -41,9 +41,9 @@ namespace Ucu.Poo.RoleplayGame;
         
         public void ReceiveAttack(int power)
         {
-            if (this.DefenseValue < power)
+            if (DefenseValue < power)
             {
-               SetHealth( this.health - (power - this.DefenseValue));
+               SetHealth( health - (power - DefenseValue));
             }
         }
 

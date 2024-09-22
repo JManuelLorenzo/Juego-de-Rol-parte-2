@@ -2,14 +2,20 @@ namespace Ucu.Poo.RoleplayGame;
 
 public class SpellsBook: IItems
 {
-    public Spell[] Spells { get; set; }
+    public List<Spell> Spells { get; set; } = new List<Spell>();
+
+    public SpellsBook(Spell hechizo)
+    {
+        Spells.Add(hechizo);
+    }
+
     
     public int AttackValue
     {
         get
         {
             int value = 0;
-            foreach (Spell spell in this.Spells)
+            foreach (Spell spell in Spells)
             {
                 value += spell.AttackValue;
             }
@@ -22,7 +28,7 @@ public class SpellsBook: IItems
         get
         {
             int value = 0;
-            foreach (Spell spell in this.Spells)
+            foreach (Spell spell in Spells)
             {
                 value += spell.DefenseValue;
             }
