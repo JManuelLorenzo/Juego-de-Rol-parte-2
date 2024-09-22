@@ -1,6 +1,6 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Archer
+public class Archer : ICharacters
 {
     private int health = 100;
 
@@ -14,6 +14,11 @@ public class Archer
     public Bow Bow { get; set; }
 
     public Helmet Helmet { get; set; }
+
+    public int Health
+    {
+        get { return health; }
+    }
 
     public int AttackValue
     {
@@ -31,28 +36,21 @@ public class Archer
         }
     }
 
-    public int Health
+    public void ReceiveAttack(int power)
     {
-        get
+        if (this.DefenseValue < power)
         {
-            return this.health;
-        }
-        private set
-        {
-            this.health = value < 0 ? 0 : value;
-        }
-    }
-
-    public void ReceiveAttack(int damage)
-    {
-        if (this.DefenseValue < damage)
-        {
-            this.Health -= damage - this.DefenseValue;
+            SetHealth(this.health - (power - this.DefenseValue));
         }
     }
 
     public void Cure()
     {
-        this.Health = 100;
+        SetHealth(100);
+    }
+
+    public void SetHealth(int value)
+    {
+        this.health = value < 0 ? 0 : value; // Controla el límite inferior
     }
 }

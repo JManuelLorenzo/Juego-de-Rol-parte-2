@@ -28,7 +28,6 @@ Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
 // ####Prueba de Knights:####
 
 using Ucu.Poo.RoleplayGame;
-/*
 Knight Jane = new Knight("Jane");
 Knight Augustos = new Knight("Augustos");
 
@@ -44,4 +43,3 @@ Augustos.ReceiveAttack(56);
 Console.WriteLine(Augustos.Health);
 Augustos.Cure();
 Console.WriteLine(Augustos.Health);
-*/

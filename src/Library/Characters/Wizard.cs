@@ -1,25 +1,32 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Wizard
+public class Wizard : ICharacters
 {
     private int health = 100;
+    private int mana;
+
     public Wizard(string name, int mana)
     {
         this.Name = name;
-        this.Mana = mana;
+        this.mana = mana;
     }
 
     public string Name { get; set; }
-    private int Mana { get; set; }
+    
     public SpellsBook SpellsBook { get; set; }
 
     public Staff Staff { get; set; }
+
+    public int Health
+    {
+        get { return health; }
+    }
 
     public int AttackValue
     {
         get
         {
-            return SpellsBook.AttackValue + Staff.AttackValue + Mana;
+            return SpellsBook.AttackValue + Staff.AttackValue + mana;
         }
     }
 
@@ -27,19 +34,7 @@ public class Wizard
     {
         get
         {
-            return SpellsBook.DefenseValue + Staff.DefenseValue + Mana;
-        }
-    }
-
-    public int Health
-    {
-        get
-        {
-            return this.health;
-        }
-        private set
-        {
-            this.health = value < 0 ? 0 : value;
+            return SpellsBook.DefenseValue + Staff.DefenseValue + mana;
         }
     }
 
@@ -47,17 +42,23 @@ public class Wizard
     {
         if (this.DefenseValue < power)
         {
-            this.Health -= power - this.DefenseValue;
+            SetHealth(this.health - (power - this.DefenseValue));
         }
     }
 
     public void Cure()
     {
-        this.Health = 100;
+        SetHealth(100);
+    }
+
+    public void SetHealth(int value)
+    {
+        this.health = value < 0 ? 0 : value; // Controla el límite inferior
     }
 
     public void Study()
     {
-        this.Mana ++;
+        this.mana++;
     }
 }
+

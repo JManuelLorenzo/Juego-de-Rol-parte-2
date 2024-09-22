@@ -1,6 +1,6 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Dwarf
+public class Dwarf : ICharacters
 {
     private int health = 100;
 
@@ -16,6 +16,11 @@ public class Dwarf
     public Shield Shield { get; set; }
 
     public Helmet Helmet { get; set; }
+
+    public int Health
+    {
+        get { return health; }
+    }
 
     public int AttackValue
     {
@@ -33,28 +38,22 @@ public class Dwarf
         }
     }
 
-    public int Health
-    {
-        get
-        {
-            return this.health;
-        }
-        private set
-        {
-            this.health = value < 0 ? 0 : value;
-        }
-    }
-
     public void ReceiveAttack(int power)
     {
         if (this.DefenseValue < power)
         {
-            this.Health -= power - this.DefenseValue;
+            SetHealth(this.health - (power - this.DefenseValue));
         }
     }
 
     public void Cure()
     {
-        this.Health = 100;
+        SetHealth(100);
+    }
+
+    public void SetHealth(int value)
+    {
+        this.health = value < 0 ? 0 : value; // Controla el límite inferior
     }
 }
+
