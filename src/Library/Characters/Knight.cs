@@ -52,7 +52,7 @@ namespace Ucu.Poo.RoleplayGame;
             SetHealth(100);
         }
         
-
+    
         public void SetHealth(int value)
         {
            this.health = value < 0 ? 0 : value; // Controla el límite inferior
