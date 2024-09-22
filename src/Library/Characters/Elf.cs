@@ -1,21 +1,19 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Wizard : ICharacters
+public class Elf : ICharacters
 {
     private int health = 100;
-    private int mana;
 
-    public Wizard(string name, int mana)
+    public Elf(string name)
     {
         this.Name = name;
-        this.mana = mana;
     }
 
     public string Name { get; set; }
     
-    public SpellsBook SpellsBook { get; set; }
+    public Bow Bow { get; set; }
 
-    public Staff Staff { get; set; }
+    public Helmet Helmet { get; set; }
 
     public int Health
     {
@@ -26,7 +24,7 @@ public class Wizard : ICharacters
     {
         get
         {
-            return SpellsBook.AttackValue + Staff.AttackValue + mana;
+            return Bow.AttackValue * 2; // Los Elfos hacen el doble de daño con el arco.
         }
     }
 
@@ -34,7 +32,7 @@ public class Wizard : ICharacters
     {
         get
         {
-            return SpellsBook.DefenseValue + Staff.DefenseValue + mana;
+            return 0; // Los Elfos no tienen defesa
         }
     }
 
@@ -55,10 +53,4 @@ public class Wizard : ICharacters
     {
         this.health = value < 0 ? 0 : value; // Controla el límite inferior
     }
-    
-    public void Study()
-    {
-        this.mana++;
-    }
 }
-
