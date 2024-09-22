@@ -1,26 +1,21 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Archer
+public class Elf : ICharacters
 {
     private int health = 100;
 
-    public Archer(string name)
+    public Elf(string name)
     {
         this.Name = name;
         Bow = new Bow();
-        Helmet = new Helmet();
 
         Objetos.Add(Bow);
-        Objetos.Add(Helmet);
     }
 
     public string Name { get; set; }
 
     public Bow Bow { get; set; }
-    public Helmet Helmet { get; set; }
 
-<<<<<<< Updated upstream
-=======
     public List<IItems> Objetos { get; set; } = new List<IItems>();
 
     public int Health
@@ -28,45 +23,37 @@ public class Archer
         get { return health; }
     }
 
->>>>>>> Stashed changes
     public int AttackValue
     {
-        get { return Bow.AttackValue; }
+        get { return Bow.AttackValue * 2; } // Los Elfos hacen el doble de daño con el arco.
     }
 
     public int DefenseValue
     {
-        get { return Helmet.DefenseValue; }
-    }
-
-    public int Health
-    {
-        get
-        {
-            return this.health;
-        }
-        private set
-        {
-            this.health = value < 0 ? 0 : value;
-        }
+        get { return 0; } // Los Elfos no tienen defensa
     }
 
     public void ReceiveAttack(int power)
     {
         if (this.DefenseValue < power)
         {
-            this.Health -= power - this.DefenseValue;
+            SetHealth(this.health - (power - this.DefenseValue));
         }
     }
 
     public void Cure()
     {
-        this.Health = 100;
+        SetHealth(100);
+    }
+
+    public void SetHealth(int value)
+    {
+        this.health = value < 0 ? 0 : value; // Controla el límite inferior
     }
 
     public string GetInfo() // Cambiado a PascalCase
     {
-        string info = $"Nombre: {Name}, Vida: {health}\nItems: Bow y Helmet\n";
+        string info = $"Nombre: {Name}, Vida: {health}\nItems: Bow\n";
 
         foreach (IItems item in Objetos)
         {

@@ -12,5 +12,5 @@ public interface ICharacters
     public void ReceiveAttack(int value);
     public void Cure();
     public void SetHealth(int value);
-
+    public string GetInfo();
 }

@@ -1,9 +1,9 @@
-﻿/*using Ucu.Poo.RoleplayGame;
+﻿using Ucu.Poo.RoleplayGame;
 
 SpellsBook book = new SpellsBook();
 book.Spells = new Spell[]{ new Spell() };
 
-Wizard gandalf = new Wizard("Gandalf");
+Wizard gandalf = new Wizard("Gandalf",2);
 gandalf.Staff = new Staff();
 gandalf.SpellsBook = book;
 
@@ -23,10 +23,10 @@ gimli.Cure();
 
 Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
 
-*/ 
+
 
 // ####Prueba de Knights:####
-
+/*
 using Ucu.Poo.RoleplayGame;
 /*
 Knight Jane = new Knight("Jane");

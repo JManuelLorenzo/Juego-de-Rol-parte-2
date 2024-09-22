@@ -1,9 +1,15 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class SpellsBook: IItems
+
+public class SpellsBook : IItems
 {
     public Spell[] Spells { get; set; }
-    
+
+    public SpellsBook()
+    {
+        Spells = new Spell[0]; // Inicializa con un array vacío
+    }
+
     public int AttackValue
     {
         get
