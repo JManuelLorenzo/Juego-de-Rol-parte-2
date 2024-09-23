@@ -14,8 +14,8 @@ public class ArcherTests
     [SetUp]
     public void Setup()
     {
-        bow = new Bow(); //15 de daño 
-        helmet = new Helmet(); //18 de proteccion
+        bow = new Bow(15); //15 de daño 
+        helmet = new Helmet(18); //18 de proteccion
 
         arquero1 = new Archer("Juan");
         arquero1.Bow = bow;

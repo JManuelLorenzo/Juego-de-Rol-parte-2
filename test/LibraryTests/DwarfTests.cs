@@ -16,9 +16,9 @@ public class DwarfTests
     [SetUp]
     public void Setup()
     {
-        axe = new Axe(); //25 de daño 
-        helmet = new Helmet(); //18 de proteccion
-        shield = new Shield(); //14 de proteccion
+        axe = new Axe(25); //25 de daño 
+        helmet = new Helmet(18); //18 de proteccion
+        shield = new Shield(14); //14 de proteccion
 
         dwarf1 = new Dwarf("Pelle");
         dwarf1.Axe = axe;

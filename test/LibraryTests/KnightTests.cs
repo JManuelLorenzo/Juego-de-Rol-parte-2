@@ -14,13 +14,13 @@ public class  Knighttest
     [SetUp]
     public void Setup()
     {
-        sword = new Sword(); //15 de daño 
-        shield = new Shield(); //18 de proteccion
-        armor = new Armor(); //18 de proteccion
+        sword = new Sword(15); //15 de daño 
+        shield = new Shield(18); //18 de proteccion
+        armor = new Armor(18); //18 de proteccion
         knight1 = new Knight("Gsus");
-        knight1.Sword = new Sword();
-        knight1.Shield = new Shield(); //14 de proteccion
-        knight1.Armor = new Armor();   //25 de proteccion
+        knight1.Sword = sword;
+        knight1.Shield = shield;
+        knight1.Armor = armor;
     }
 
 
@@ -33,19 +33,19 @@ public class  Knighttest
 
     [Test]
     public void Ataque_Devuelve_El_Valor_Correcto(){
-        Assert.That(20, Is.EqualTo(knight1.AttackValue));
+        Assert.That(15, Is.EqualTo(knight1.AttackValue));
     }
 
     [Test]
     public void Defensa_Devuelve_El_Valor_Correcto(){
-        Assert.That(39, Is.EqualTo(knight1.DefenseValue));
+        Assert.That(36, Is.EqualTo(knight1.DefenseValue));
     }
 
     [Test]
     public void Pierde_Vida(){
         knight1.Cure();
         knight1.ReceiveAttack(60);
-        Assert.That(knight1.Health, Is.EqualTo(79)); //estaba probando si se puede hacer de las formas
+        Assert.That(knight1.Health, Is.EqualTo(76)); //estaba probando si se puede hacer de las formas
     }
 
     [Test]
