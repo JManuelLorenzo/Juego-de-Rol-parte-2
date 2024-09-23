@@ -2,8 +2,6 @@ namespace Ucu.Poo.RoleplayGame;
 
 public class Staff : IItems
 {
-
-
         public Staff(int ataque)
         {
             this.AttackValue = ataque;

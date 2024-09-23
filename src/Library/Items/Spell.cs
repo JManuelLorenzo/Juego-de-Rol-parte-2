@@ -2,13 +2,12 @@ namespace Ucu.Poo.RoleplayGame;
 
 public class Spell : IItems
 {
-    private int _attackValue;
-    private int _defenseValue;
+
 
     public Spell(int ataque, int defensa)
     {
-        _attackValue = ataque;
-        _defenseValue = defensa;
+        AttackValue = ataque;
+        DefenseValue = defensa;
     }
 
     public int AttackValue { get; private set; }
