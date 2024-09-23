@@ -2,18 +2,11 @@ namespace Ucu.Poo.RoleplayGame;
 
 public class Helmet: IItems
 {
-    public int AttackValue
+    public Helmet( int defense)
     {
-        get
-        {
-            return 0;
-        }
+        this.AttackValue = 0; // los helmets no dan ataque.
+        this.DefenseValue = defense;
     }
-    public int DefenseValue
-    {
-        get
-        {
-            return 18;
-        }
-    }
+    public int AttackValue { get; private set; }
+    public int DefenseValue { get; private set; }
 }

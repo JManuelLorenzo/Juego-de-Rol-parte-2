@@ -2,19 +2,13 @@ namespace Ucu.Poo.RoleplayGame;
 
 public class Armor : IItems
 {
-    public int DefenseValue
+    public Armor(int defensa)
     {
-        get
-        {
-            return 25;
-        }
+        this.AttackValue = 0;
+        this.DefenseValue = defensa;
     }
 
-    public int AttackValue
-    {
-        get
-        {
-            return 0;
-        }
-    }
+    public int AttackValue { get; private set; }
+
+    public int DefenseValue { get; private set; }
 }

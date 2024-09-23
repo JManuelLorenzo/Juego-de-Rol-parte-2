@@ -11,19 +11,7 @@ public class Spell : IItems
         _defenseValue = defensa;
     }
 
-    public int AttackValue
-    {
-        get
-        {
-            return _attackValue;
-        }
-    }
+    public int AttackValue { get; private set; }
 
-    public int DefenseValue
-    {
-        get
-        {
-            return _defenseValue;
-        }
-    }
+    public int DefenseValue { get; private set; }
 }

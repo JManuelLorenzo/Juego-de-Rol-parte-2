@@ -2,18 +2,12 @@ namespace Ucu.Poo.RoleplayGame;
 
 public class Bow: IItems
 {
-    public int AttackValue 
+    public Bow(int ataque)
     {
-        get
-        {
-            return 15;
-        } 
-    } public int DefenseValue
-    {
-        get
-        {
-            return 0;
-        }
+        this.AttackValue = ataque;
+        this.DefenseValue = 0;
     }
+    public int AttackValue { get; private set; }
+    public int DefenseValue { get; private set; }
     
 }

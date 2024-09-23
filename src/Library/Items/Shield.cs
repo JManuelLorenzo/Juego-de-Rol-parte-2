@@ -2,18 +2,13 @@ namespace Ucu.Poo.RoleplayGame;
 
 public class Shield : IItems
 {
-    public int AttackValue
+    
+    public Shield( int defensa)
     {
-        get
-        {
-            return 0;
-        }
+        this.AttackValue = 0; // los shields no dan ataque.
+        this.DefenseValue = defensa;
     }
-    public int DefenseValue
-    {
-        get
-        {
-            return 14;
-        }
-    }
+    public int AttackValue { get; private set; }
+    public int DefenseValue { get; private set; }
+    
 }

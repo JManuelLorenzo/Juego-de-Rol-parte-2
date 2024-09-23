@@ -3,27 +3,13 @@ namespace Ucu.Poo.RoleplayGame;
 public class Staff : IItems
 {
 
-    private int _attackValue;
-    private int _defenseValue;
 
-    public Staff (int ataque, int defensa){
-        _attackValue = ataque;
-        _defenseValue = defensa;
-    }
-
-    public int AttackValue 
-    {
-        get
+        public Staff(int ataque)
         {
-            return _attackValue;
-        } 
-    }
-
-    public int DefenseValue
-    {
-        get
-        {
-            return _defenseValue;
+            this.AttackValue = ataque;
+            this.DefenseValue = 0; // Los staff no tienen defensa.
         }
-    }
+        public int AttackValue { get; private set; }
+        public int DefenseValue { get; private set; }
 }
+    

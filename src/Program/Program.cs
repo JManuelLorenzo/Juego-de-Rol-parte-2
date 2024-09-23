@@ -31,15 +31,14 @@ using Ucu.Poo.RoleplayGame;
 Knight Jane = new Knight("Jane");
 Knight Augustos = new Knight("Augustos");
 
-Jane.Sword = new Sword();
-Jane.Shield = new Shield();
-Jane.Armor = new Armor();
-Augustos.Sword = new Sword();
-Augustos.Shield = new Shield();
-Augustos.Armor = new Armor();
+Jane.Sword = new Sword(90);
+Jane.Shield = new Shield(3);
+Jane.Armor = new Armor(4);
+Augustos.Sword = new Sword(5);
+Augustos.Shield = new Shield(6);
+Augustos.Armor = new Armor(6);
 
 Console.WriteLine(Augustos.Health);
-Augustos.ReceiveAttack(56);
+Augustos.ReceiveAttack(Jane.AttackValue);
 Console.WriteLine(Augustos.Health);
 Augustos.Cure();
-Console.WriteLine(Augustos.Health);

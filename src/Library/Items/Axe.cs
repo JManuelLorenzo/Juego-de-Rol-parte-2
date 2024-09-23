@@ -2,19 +2,14 @@ namespace Ucu.Poo.RoleplayGame;
 
 public class Axe: IItems
 {
-    public int AttackValue 
+    public Axe(int ataque)
     {
-        get
-        {
-            return 25;
-        } 
+        this.AttackValue = ataque;
+        this.DefenseValue = 0;
     }
-    public int DefenseValue
-    {
-        get
-        {
-            return 0;
-        }
-    }
+
+    public int AttackValue { get; private set; }
+
+    public int DefenseValue { get; private set; }
 }
 

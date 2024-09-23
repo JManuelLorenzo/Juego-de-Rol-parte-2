@@ -2,20 +2,13 @@ namespace Ucu.Poo.RoleplayGame;
 
 public class Sword : IItems
 {
-    public int AttackValue 
+    public Sword(int ataque)
     {
-        get
-        {
-            return 20;
-        } 
+        this.AttackValue =ataque;
+        this.DefenseValue = 0; // Las espadas no dan defensa.
     }
+    public int AttackValue { get; private set; }
 
-    public int DefenseValue
-    {
-        get
-        {
-            return 0;
-        }
-    }
+    public int DefenseValue {get; private set;}
 }
 
