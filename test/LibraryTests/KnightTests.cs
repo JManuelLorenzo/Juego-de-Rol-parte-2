@@ -45,7 +45,7 @@ public class  Knighttest
     public void Pierde_Vida(){
         knight1.Cure();
         knight1.ReceiveAttack(60);
-        Assert.That(knight1.Health, Is.EqualTo(76)); //estaba probando si se puede hacer de las formas
+        Assert.That(knight1.Health, Is.EqualTo(76));
     }
 
     [Test]

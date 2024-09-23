@@ -13,8 +13,6 @@ public class Elf : ICharacters
     
     public Bow Bow { get; set; }
 
-    public Helmet Helmet { get; set; }
-
     public int Health
     {
         get { return health; }

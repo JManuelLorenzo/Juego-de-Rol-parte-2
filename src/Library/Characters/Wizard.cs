@@ -65,7 +65,7 @@ public class Wizard : ICharacters
             this.Mana++;
         }
 
-        if (cantidad > 29 ){
+        if (cantidad > 100 ){
             Console.WriteLine("Tremendo nerd 🤓");
         }
     }

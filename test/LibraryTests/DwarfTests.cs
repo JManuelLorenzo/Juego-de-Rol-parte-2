@@ -31,7 +31,7 @@ public class DwarfTests
     [Test]
     public void Validacion_Nombre()
     {
-        Assert.That("Pelle", Is.EqualTo(dwarf1.Name));
+        Assert.That(dwarf1.Name, Is.EqualTo("Pelle"));
     }
 
     [Test]
@@ -47,7 +47,7 @@ public class DwarfTests
     [Test]
     public void Pierde_Vida(){
         dwarf1.ReceiveAttack(60);
-        Assert.That(dwarf1.Health, Is.EqualTo(72)); //estaba probando si se puede hacer de las formas
+        Assert.That(dwarf1.Health, Is.EqualTo(72));
     }
 
     [Test]
