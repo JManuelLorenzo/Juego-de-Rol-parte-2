@@ -3,11 +3,6 @@ namespace Ucu.Poo.RoleplayGame;
     public class Knight : ICharacters
     {
         
-
-        public Knight(string name)
-        {
-            this.Name = name;
-        }
         private int health = 100;
         public string Name { get; set; }
 
@@ -16,6 +11,11 @@ namespace Ucu.Poo.RoleplayGame;
         public Shield Shield { get; set; }
 
         public Armor Armor { get; set; }
+
+        public Knight(string name)
+        {
+            this.Name = name;
+        }
 
         public int Health
         {

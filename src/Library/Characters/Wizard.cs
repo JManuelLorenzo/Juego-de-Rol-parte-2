@@ -3,38 +3,40 @@ namespace Ucu.Poo.RoleplayGame;
 public class Wizard : ICharacters
 {
     private int health = 100;
-    private int mana;
-
-    public Wizard(string name, int mana)
-    {
-        this.Name = name;
-        this.mana = mana;
-    }
+    public int Mana { get; set; }
 
     public string Name { get; set; }
     
-    public SpellsBook SpellsBook { get; set; }
+    private SpellsBook Libro { get; set; }
 
-    public Staff Staff { get; set; }
+    private Staff Baston { get; set; }
 
-    public int Health
+    public Wizard(string name, int mana, SpellsBook libro, Staff staff) //Constructor
+    {
+        this.Name = name;
+        this.Mana = mana;
+        this.Libro = libro;
+        this.Baston = staff;
+    }
+
+    public int Health // Vida
     {
         get { return health; }
     }
 
-    public int AttackValue
+    public int AttackValue // Ataque
     {
         get
         {
-            return SpellsBook.AttackValue + Staff.AttackValue + mana;
+            return Libro.AttackValue + Baston.AttackValue + Mana;
         }
     }
 
-    public int DefenseValue
+    public int DefenseValue // Defensa
     {
         get
         {
-            return SpellsBook.DefenseValue + Staff.DefenseValue + mana;
+            return Libro.DefenseValue + Baston.DefenseValue + Mana;
         }
     }
 
@@ -55,9 +57,25 @@ public class Wizard : ICharacters
     {
         this.health = value < 0 ? 0 : value; // Controla el límite inferior
     }
-    public void Study()
+
+    
+    public void Study(int cantidad)
     {
-        this.mana++;
+        for (int i = 0; i<cantidad; i++){
+            this.Mana++;
+        }
+
+        if (cantidad > 29 ){
+            Console.WriteLine("Tremendo nerd 🤓");
+        }
+    }
+
+    public string GetInfo() // Metodo que permite obtener toda la informacion del personaje, en este caso se trata del Wizzard(mago).
+    {
+        string info = $"Nombre: {this.Name}. \nVida: {this.Health}. \nSpells Book: {this.Libro}. \nTotal Ataque: {AttackValue}. \n Total Defensa: {DefenseValue}.";
+        
+        return info;
+
     }
 }
 
